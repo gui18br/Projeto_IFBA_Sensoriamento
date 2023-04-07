@@ -1,8 +1,8 @@
 package main;
 
 import java.util.ArrayList;
-import java.util.Random;
 
+import carro.GeradorAleatorioDeTemperatura;
 import carro.Motor;
 import carro.MotorStatus;
 import carro.Painel;
@@ -12,16 +12,17 @@ public class main {
 	public static void main(String[] args) {
 		Sensor sensor = new Sensor();
 		Painel painel = new Painel(false);
-		Random random = new Random();
+		GeradorAleatorioDeTemperatura aleatorio = new GeradorAleatorioDeTemperatura();
 		
 		int[] list = new int[10];
 		Motor[] motores = new Motor[10];
+		int temperatura;
 		ArrayList<MotorStatus> statusMotores = new ArrayList<MotorStatus>();
 		for(int i =0; i < 10; i++) {
-			list[i] = random.nextInt(41) + 80;
-			motores[i] = new Motor(list[i], 2000);
+			temperatura = (int) aleatorio.gerarTemperatura();
+			motores[i] = new Motor(temperatura, 2000);
 			String status = (String) sensor.tratarTemperatura(motores[i], painel);
-			statusMotores.add(new MotorStatus(list[i], status));
+			statusMotores.add(new MotorStatus(temperatura, status));
 		}
 
 		MotorStatus.ordenarMotoresPorTemperatura(statusMotores);

@@ -5,7 +5,7 @@ public class Modulo{
 	
 	public Object tratarTemperaturaAlta(Motor motor, Painel painel) {
 		
-		if (motor.getTemperatura() >= 110) {
+		if (motor.getTemperatura() >= 104) {
 			motor.ventoinhaLigada();
 			painel.acenderluz();
 			return "Temperatura do motor: " + motor.getTemperatura() + "\n" + 
