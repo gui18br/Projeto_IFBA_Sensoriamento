@@ -17,7 +17,11 @@ public class Painel {
 	}
 	
 	public void acenderluz() {
-		 luzAlertaTemp = true;
+		 this.luzAlertaTemp = true;
+	}
+	
+	public void apagarLuz() {
+		this.luzAlertaTemp = false;
 	}
 		
 }

@@ -4,6 +4,7 @@ public class Motor{
 
 	private int temperatura;
 	private int rpm;
+	private double danoMotor;
 	
 	public Motor() {
 		
@@ -43,5 +44,13 @@ public class Motor{
 	@Override
 	public String toString() {
 		return "Motor [temperatura=" + temperatura + ", rpm=" + rpm + "]";
+	}
+
+	public double getDanoMotor() {
+		return danoMotor;
+	}
+
+	public void setDanoMotor(double danoMotor) {
+		this.danoMotor = danoMotor;
 	}
 }
